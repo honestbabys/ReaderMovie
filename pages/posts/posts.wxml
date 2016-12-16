@@ -12,17 +12,17 @@
   </swiper>
   <view class="post-container">
     <view class="post-author-date">
-      <image class="post-author" src="/images/avatar/1.png"></image>
-      <text class="post-date">Nov 25 2016 </text>
+      <image class="post-author" src="{{author_img}}"></image>
+      <text class="post-date">{{date}}</text>
     </view>
-    <text class="post-title">正是虾肥蟹壮时</text>
-    <image class="post-image" src="/images/posts/crab.png"></image>
-    <text class="post-content">金秋九月囤虾时。中秋节前后，正是各家各户囤虾时。市民们少则几百元，动辄上千元地买虾囤起来，就是为了冬季还能吃上味美..</text>
+    <text class="post-title">{{title}}</text>
+    <image class="post-image" src="{{post_img}}"></image>
+    <text class="post-content">{{content}}</text>
     <view class="post-like">
       <image class="post-like-image" src="../../images/icon/chat.png"></image>
-      <text class="post-like-content">92</text>
+      <text class="post-like-content">{{view_num}}</text>
       <image class="post-like-image" src="../../images/icon/chat1.png"></image>
-      <text class="post-like-content">65</text>
+      <text class="post-like-content">{{collect_num}}</text>
     </view>
   </view>
   <view class="post-container">
