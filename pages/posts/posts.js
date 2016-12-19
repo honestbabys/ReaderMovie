@@ -9,5 +9,12 @@ Page({
         this.setData({
             posts_key: postData.postList //取文件中导出的参数
         });
+    },
+    
+    onPostTap: function (event) {
+        var postId = event.currentTarget.dataset.postid;
+        wx.navigateTo({
+          url: 'posts-detail/posts-detail',
+        })
     }
 })

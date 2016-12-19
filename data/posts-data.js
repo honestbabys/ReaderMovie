@@ -6,7 +6,8 @@ var local_database = [
         content: "金秋九月囤虾时。中秋节前后，正是各家各户囤虾时。市民们少则几百元，动辄上千元地买虾囤起来，就是为了冬季还能吃上味美..",
         reading: "112",
         collection: "96",
-        avatar: "/images/avatar/1.png"
+        avatar: "/images/avatar/1.png",
+        postid:0
     },
     {
         date: "Nov 15 2016",
@@ -15,7 +16,8 @@ var local_database = [
         content: "金秋九月囤虾时。中秋节前后，正是各家各户囤虾时。市民们少则几百元，动辄上千元地买虾囤起来，就是为了冬季还能吃上味美..",
         reading: "112",
         collection: "96",
-        avatar: "/images/avatar/2.png"
+        avatar: "/images/avatar/2.png",
+        postid:1
     },
     {
         title: "微信·小程序开发工具安装指南",
@@ -26,6 +28,7 @@ var local_database = [
         collection: 92,
         date: "Nov 20 2016",
         avatar: "/images/avatar/5.png",
+        postid:2
     },
 ]
 
