@@ -3,7 +3,7 @@
 
 <!--view相当于容器 -->
 <view class="container">
-  <image class="user-avatar" src="/images/mitu.png"></image>
+  <image class="user-avatar" src="/images/wx.png"></image>
   <text class="user-name">by 楞娃</text>
   <view class="moto-container" bindtap="onTap">
     <text class="moto">开启小程序之旅</text>
