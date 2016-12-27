@@ -1,3 +1,4 @@
+<import src="posts-item/post-item-template.wxml" />
 <view>
   <swiper indicator-dots="true" autoplay="true">
     <swiper-item>
@@ -10,34 +11,12 @@
       <image src="/images/wx.png"></image>
     </swiper-item>
   </swiper>
-  <view class="post-container">
-    <view class="post-author-date">
-      <image class="post-author" src="/images/avatar/1.png"></image>
-      <text class="post-date">Nov 25 2016 </text>
+  <block wx:for="{{posts_key}}" wx:for-item="item">
+    <view catchtap="onPostTap" data-postId="{{item.postid}}">
+    <!--利用新增加的view来响应消息-->
+
+      <!--is指定模版名称 data指代填充的元素，子元素名称-->
+      <template is="postItem" data="{{...item}}" />
     </view>
-    <text class="post-title">正是虾肥蟹壮时</text>
-    <image class="post-image"src="/images/post/crab.png"></image>
-    <text class="post-content">金秋九月囤虾时。中秋节前后，正是各家各户囤虾时。市民们少则几百元，动辄上千元地买虾囤起来，就是为了冬季还能吃上味美..</text>
-    <view class="post-like">
-      <image class="post-like-image"src="../../images/icon/chat.png"></image>
-      <text class="post-like-content">92</text>
-      <image class="post-like-image"src="../../images/icon/chat1.png"></image>
-      <text class="post-like-content">65</text>
-    </view>
-  </view>
-    <view class="post-container">
-    <view class="post-author-date">
-      <image class="post-author" src="/images/avatar/2.png"></image>
-      <text class="post-date">Nov 15 2016 </text>
-    </view>
-    <text class="post-title">比利.林肯的故事</text>
-    <image class="post-image"src="/images/post/bl.png"></image>
-    <text class="post-content">一个1周岁左右的小男孩，被年轻的妈妈牵着小手来到公园的广场前，要上有十几个阶梯的台阶了。小男孩却挣脱开妈妈的手，他要自己爬上去。他用胖胖的小手向上爬，他的妈妈也没有抱他上去的意思。当爬上两个台阶时，他就感到台阶很高，回头瞅一眼妈妈，妈妈没有伸手去扶他的意思，只是眼睛里充满了慈爱和鼓励。小男孩又抬头向上瞅了瞅，他放弃了让妈妈抱的想法，还是手脚并用小心地向上爬。他爬得很吃力，小屁股抬得老高，小脸蛋也累得通红，那身娃娃服也被弄得都是土，小手也脏乎乎的，但他最终爬上去了。年轻的妈妈这才上前拍拍儿子身上的土，在那通红的小脸蛋上亲了一口。</text>
-    <view class="post-like">
-      <image class="post-like-image"src="../../images/icon/chat.png"></image>
-      <text class="post-like-content">92</text>
-      <image class="post-like-image"src="../../images/icon/chat1.png"></image>
-      <text class="post-like-content">65</text>
-    </view>
-  </view>
+  </block>
 </view>
