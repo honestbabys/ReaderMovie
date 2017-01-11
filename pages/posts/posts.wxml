@@ -1,6 +1,6 @@
 <import src="posts-item/post-item-template.wxml" />
 <view>
-  <swiper indicator-dots="true" autoplay="true">
+  <swiper catchtap="onSwiperTap" indicator-dots="true" autoplay="true">
     <swiper-item>
       <image src="/images/iqiyi.png" data-postId="0"></image>
     </swiper-item>
@@ -13,7 +13,9 @@
   </swiper>
   <block wx:for="{{posts_key}}" wx:for-item="item">
     <view catchtap="onPostTap" data-postId="{{item.postid}}">
+
       <!--利用新增加的view来响应消息-->
+
       <!--is指定模版名称 data指代填充的元素，子元素名称-->
       <template is="postItem" data="{{...item}}" />
     </view>
