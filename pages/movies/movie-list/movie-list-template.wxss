@@ -1,1 +1,15 @@
 @import "../movie/movie-template.wxss";
+
+.movie-list-container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-head {
+  padding: 30rpx 20rpx 22rpx;
+}
+
+.slogan {
+  font-size: 24rpx;
+}
