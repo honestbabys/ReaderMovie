@@ -13,7 +13,23 @@ function covertToStarsArray(stars) {
     return array;
 }
 
+//回调函数实现
+function http(url, callBack) {
+    var that = this;
+    wx.request({
+        url: url, 
+        method: 'GET',
+        header: {
+            'content-type': 'json' //application/json无法调用成功
+        },
+        success: function (res) {
+            callBack(res.data);
+        }
+    })
+}
+
 //导出为covertToStarsArray
 module.exports = {
-    covertToStarsArray: covertToStarsArray
+    covertToStarsArray: covertToStarsArray,
+    http:http
 }

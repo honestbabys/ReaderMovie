@@ -1,4 +1,4 @@
-var utils = require('../../utils/utils.js')
+var utils = require('../../utils/utils.js');
 var app = getApp();
 //不指定data中的key为空值会报错
 Page({
@@ -14,6 +14,14 @@ Page({
         this.getMovieList(inTheatersUrl, "inTheaters", "正在热映");
         this.getMovieList(commingSoonUrl, "commingSoon", "即将上映");
         this.getMovieList(top250Url, "top250", "豆瓣top250");
+    },
+
+    onMoreTap: function (event) {
+        console.log("onMoreTap");
+        var category = event.currentTarget.dataset.category;
+        wx.navigateTo({
+            url: 'more-movie/more-movie?category=' + category
+        })
     },
 
     getMovieList: function (url, settedKey, categoryTitle) {

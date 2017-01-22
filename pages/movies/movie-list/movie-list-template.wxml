@@ -4,7 +4,9 @@
     <view class="inner-container">
       <view class="movie-head">
         <text class="slogan">{{categoryTitle}}</text>
-        <view class="more">
+        <view catchtap="onMoreTap" class="more" data-category="{{categoryTitle}}">
+
+          <!-- 通过data-category这个参数获取到是哪个类型点击的更多-->
           <text class="more-text">更多</text>
           <image class="more-img" src="/images/icon/arrow-right.png"></image>
         </view>
