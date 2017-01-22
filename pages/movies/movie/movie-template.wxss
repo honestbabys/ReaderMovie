@@ -1,10 +1,12 @@
-@import "../stars/stars-template.wxss";
+@import "../stars/stars-template.wxss";/*引用样式*/
 
 .movie-container {
   display: flex;
   flex-direction: column;
+  padding: 0 22rpx;
 }
 
+/*电影海报样式*/
 .movie-img {
   width: 200rpx;
   height: 270rpx;
