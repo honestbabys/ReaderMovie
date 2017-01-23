@@ -5,7 +5,10 @@ Page({
     data: ({
         inTheaters: {},
         commingSoon: {},
-        top250: {}
+        top250: {},
+        containerShow: true,
+        searchPanelShow: false,
+        searchResult:{}
     }),
     onLoad: function (event) {
         var inTheatersUrl = app.globalData.doubanBase + "/v2/movie/in_theaters?start=0&count=3";
@@ -17,7 +20,7 @@ Page({
     },
 
     onMoreTap: function (event) {
-        console.log("onMoreTap");
+        //console.log("onMoreTap");
         var category = event.currentTarget.dataset.category;
         wx.navigateTo({
             url: 'more-movie/more-movie?category=' + category
@@ -32,7 +35,7 @@ Page({
                 'content-type': 'json' //application/json无法调用成功
             },
             success: function (res) {
-                console.log(res.data);
+                //console.log(res.data);
                 that.processDoubanData(res.data, settedKey, categoryTitle)
             }
         })
@@ -60,6 +63,27 @@ Page({
             categoryTitle: categoryTitle,
             movies: movies
         })
-        this.setData(readyData)
-    }
+        this.setData(readyData);
+    },
+
+    onBindFocus: function (event) {
+        this.setData({
+            containerShow: false,
+            searchPanelShow: true
+        });
+    },
+
+    onCancelImgTap: function (event) {
+        this.setData({
+            containerShow: true,
+            searchPanelShow: false,
+            searchResult: false
+        });
+    },
+
+    onBindBlur: function (event) {
+        var text = event.detail.value;
+        var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text;
+        this.getMovieList(searchUrl, "searchResult", "");
+    },
 })
